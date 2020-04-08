@@ -1,0 +1,43 @@
+/*
+input[type="checkbox"] {
+  display: none;
+}
+input[type="checkbox"] + label{
+  position: relative;
+  margin:10px;
+  display: inline-block;
+  background-image:url("../images/i_aag_260x280.png");
+  background-repeat: no-repeat;
+  background-size:contain;
+  width: 100px;
+  height:100px;
+}
+input[type="checkbox"]:checked + label{
+  background-image:url("../images/green_img/grn_i_aag_260x280.png");
+  background-repeat: no-repeat;
+  background-size:contain;
+  width: 100px;
+  height: 100px;
+} */
+input[type="checkbox"]{
+  display: none;
+}
+label {
+    display: inline;
+    height: 50px;
+    position: relative;
+    width: 50px;
+    cursor:pointer;
+}
+.location_checkbox {
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+.location_checkbox + img {
+    border: 1px solid rgba( 0, 0, 0, 0 );
+}
+.location_checkbox:checked + img {
+    border: 6px solid #66FF33;
+}

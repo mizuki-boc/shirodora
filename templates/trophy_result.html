@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>城とドラゴン 取得可能トロフィー・バッジ検索</title>
+    <link rel="stylesheet" type=text/css href="/static/css/bootstrap.min.css">
+    <link rel="stylesheet" type=text/css href="/static/css/bootstrap-grid.min.css">
+    <link rel="stylesheet" type=text/css href="/static/css/bootstrap-reboot.min.css">
+  </head>
+  <body>
+    <h1>検索結果</h1>
+    <!-- <a href="/"><h4>所持キャラ入力画面に戻る</h4></a>
+    <table border="1" class="table">
+      {% if not d1_getable_chars %}
+        <th>D1取得可能なキャラはいません．</th>
+      {% else %}
+        {% for char in d1_getable_chars %}
+          <tr>
+            <th><img src="/static/images/{{ chars_info[char]["img"] }}" alt="test" width="65" height="70">{{ char }}</th>
+          </tr>
+        {% endfor %}
+      {% endif %}
+    </table> -->
+    <a href="/"><h4>所持キャラ入力画面に戻る</h4></a>
+    <!-- 更新分 -->
+
+    <div align="center" style="padding: 10px; position: relative; left: 5px; background-color: #5dd48b; width: 300px; font-size: 150%; margin-bottom: 10px; border: 1px dashed #333333; border-radius: 5px;">
+      D1 取得可能キャラ
+    </div>
+    {% for ch_d1 in d1_getable_chars %}
+      <img class="thumbnail" src="/static/images/{{ chars_info[ch_d1]["img"] }}" width="91" height="98">
+    {% endfor %}
+
+    <div align="center" style="padding: 10px; position: relative; left: 5px; background-color: #5dd48b; width: 300px; font-size: 150%; margin-bottom: 10px; border: 1px dashed #333333; border-radius: 5px;">
+      金バッジ取得可能キャラ
+    </div>
+    {% for ch_gb in gb_getable_chars %}
+      <img class="thumbnail" src="/static/images/{{ chars_info[ch_gb]["img"] }}" width="91" height="98">
+    {% endfor %}
+
+    <div align="center" style="padding: 10px; position: relative; left: 5px; background-color: #5dd48b; width: 300px; font-size: 150%; margin-bottom: 10px; border: 1px dashed #333333; border-radius: 5px;">
+      虹バッジ取得可能キャラ
+    </div>
+    {% for ch_rb in rb_getable_chars %}
+      <img class="thumbnail" src="/static/images/{{ chars_info[ch_rb]["img"] }}" width="91" height="98">
+    {% endfor %}
+    
+    <a href="/"><h4>所持キャラ入力画面に戻る</h4></a>
+    <!-- おわり -->
+  </body>
+</html>

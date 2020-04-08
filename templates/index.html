@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>城ドラ 取得可能トロフィー検索</title>
+    <link rel="stylesheet" type=text/css href="/static/css/bootstrap.min.css">
+    <link rel="stylesheet" type=text/css href="/static/css/bootstrap-grid.min.css">
+    <link rel="stylesheet" type=text/css href="/static/css/bootstrap-reboot.min.css">
+    <link rel="stylesheet" type=text/css href="/static/css/style.css">
+  </head>
+  <body>
+    <h1>所持キャラクタ選択</h1>
+    <form class="" action="/result" method="post" id="testid">
+      <!-- 検索用フォーム -->
+      <p>
+        <!-- <input type="button" class="btn btn-primary" value="トロフィー・バッジ検索" > -->
+        <button type="submit" class="btn btn-primary" name="button">トロフィー・バッジ検索</button>
+        <button type="button" class="btn btn-success" name="button" onclick="check_all(true)">全キャラ選択</button>
+        <button type="button" class="btn btn-danger" name="button" onclick="check_all(false)">全キャラ選択解除</button>
+      </p>
+    </form>
+    {% for c in [1,2,3,4,5,7] %}
+      <form class="" action="" method="post" name="char_c{{ c }}">
+        <ul>
+          <!-- ここにコスト別のform を作成　for文で複数表示　一括選択ボタンの作成 -->
+          <li>
+            <h2>コスト{{ c }}</h2>
+            <button type="button" class="btn btn-success" name="button" onclick="check_c{{ c }}(true)">全コスト{{ c }}キャラ選択</button>
+            <button type="button" class="btn btn-danger" name="button" onclick="check_c{{ c }}(false)">全コスト{{ c }}キャラ選択解除</button>
+          </li>
+          {% for char in chars_info.keys() %}
+            {% if chars_info[char]["cost"] == c %}
+            <label>
+              {% if char in checked_chars %}
+                <input class="location_checkbox" type="checkbox" name="char{{ c }}" value="{{ char }}" form="testid" id="cost{{ c }}" checked="checked">
+              {% else %}
+                <input class="location_checkbox" type="checkbox" name="char{{ c }}" value="{{ char }}" form="testid" id="cost{{ c }}">
+              {% endif %}
+              <img class="thumbnail" src="/static/images/{{ chars_info[char]["img"] }}" width="130" height="140">
+            </label>
+            {% endif %}
+          {% endfor %}
+        </ul>
+      </form>
+    {% endfor %}
+    <p><a href="#">ページトップへ戻る</a></p>
+    <script src="/static/js/base.js"></script>
+  </body>
+</html>
