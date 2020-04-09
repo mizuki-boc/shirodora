@@ -4,7 +4,7 @@ import codecs
 
 class shirodora_info():
     def __init__(self):
-        with codecs.open("shirodora_data.json", 'r', 'utf-8') as f:
+        with codecs.open("shirodora_data.json", encoding='utf-8') as f:
             self.char_data = json.load(f)
         self.char_list = list(self.char_data.keys())
 
