@@ -1,12 +1,12 @@
 # coding: utf-8
 import json
-from io import open
 
 class shirodora_info():
     def __init__(self):
-        with open("shirodora_data.json", mode="r", encoding="utf-8") as f:
+        with open("shirodora_data.json") as f:
             self.char_data = json.load(f)
         self.char_list = list(self.char_data.keys())
+        print(self.char_list)
 
     def search_d1_getable_char(self, search_chars):
         d1_getable_char = []
