@@ -1,9 +1,10 @@
 # coding: utf-8
 import json
+import codecs
 
 class shirodora_info():
     def __init__(self):
-        with open("shirodora_data.json", 'r', 'shift_jis') as f:
+        with codecs.open("shirodora_data.json", 'w', 'utf-8') as f:
             self.char_data = json.load(f)
         self.char_list = list(self.char_data.keys())
 
