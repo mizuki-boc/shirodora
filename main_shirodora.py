@@ -30,7 +30,7 @@ def result():
     for ch in ["char1", "char2", "char3", "char4", "char5", "char7"]:
         form_char_list = form_char_list + request.form.getlist(ch)
     session["checked_chars"] = form_char_list
-    print(session["checked_chars"])
+    #print(session["checked_chars"])
     #print(info.search_rbadge_getable_char(session["checked_chars"]))
     #print(info.search_gbadge_getable_char(session["checked_chars"]))
     max_len = max(len(info.search_d1_getable_char(session["checked_chars"])),

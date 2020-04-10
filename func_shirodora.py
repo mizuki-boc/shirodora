@@ -4,12 +4,9 @@ import sys
 
 class shirodora_info():
     def __init__(self):
-        #テストよう
-        print(sys.version)
         with open("shirodora_data.json", encoding="utf-8") as f:
             self.char_data = json.load(f)
         self.char_list = list(self.char_data.keys())
-        print(self.char_list)
 
     def search_d1_getable_char(self, search_chars):
         d1_getable_char = []
@@ -51,4 +48,4 @@ class shirodora_info():
 if __name__ == "__main__":
     test = shirodora_info()
     #test.search_d1_getable_char("剣士")
-    print(test.search_d1_getable_char(["バルーンガール"]))
+    #print(test.search_d1_getable_char(["バルーンガール"]))
