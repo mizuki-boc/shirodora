@@ -3,7 +3,7 @@ import json
 
 class shirodora_info():
     def __init__(self):
-        with open("shirodora_data.json", "r", encoding="utf-8") as f:
+        with open("shirodora_data.json", encoding="utf-8") as f:
             self.char_data = json.load(f)
         self.char_list = list(self.char_data.keys())
         print(self.char_list)
