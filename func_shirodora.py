@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 import json
+import sys
 
 class shirodora_info():
     def __init__(self):
@@ -7,6 +8,8 @@ class shirodora_info():
             self.char_data = json.load(f)
         self.char_list = list(self.char_data.keys())
         print(self.char_list)
+        #テストよう
+        print(sys.version)
 
     def search_d1_getable_char(self, search_chars):
         d1_getable_char = []
